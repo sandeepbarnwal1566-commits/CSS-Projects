@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.todo-list {
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.todo-list > li {
+  background-color: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  font-size: 16px;
+  margin-left: 8px;
+  color: #333;
+}
+
+.sub-item {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* Test 4 - no text decoration */
+a {
+  text-decoration: none;
+}
+
+/* Test 5 - unvisited link color */
+a:link {
+  color: #0077cc;
+}
+
+/* Test 6 - visited link color */
+a:visited {
+  color: purple;
+}
+
+/* Test 7 - hover color */
+a:hover {
+  color: #ff6600;
+}
+
+/* Test 8 - focused outline */
+a:focus {
+  outline: 2px solid #ff6600;
+}
+
+/* Test 9 - active/clicked color */
+a:active {
+  color: red;
+}
