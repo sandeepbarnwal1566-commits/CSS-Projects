@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <h1>Job Application Form</h1>
+
+    <form novalidate>
+
+      <div class="field">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="field">
+        <label for="position">Position:</label>
+        <select id="position" name="position" required>
+          <option value="" disabled selected>Select a position</option>
+          <option value="frontend">Frontend Engineer</option>
+          <option value="backend">Backend Engineer</option>
+          <option value="design">Product Designer</option>
+          <option value="product">Product Manager</option>
+          <option value="data">Data Scientist</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <fieldset class="radio-group">
+          <legend>Availability:</legend>
+
+          <label>
+            <input type="radio" name="availability" value="full-time" checked />
+            Full-Time
+          </label>
+
+          <label>
+            <input type="radio" name="availability" value="part-time" />
+            Part-Time
+          </label>
+        </fieldset>
+      </div>
+
+      <div class="field">
+        <label for="message">Why do you want this job?</label>
+        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required minlength="20"></textarea>
+      </div>
+
+      <button type="submit">Submit Application</button>
+
+    </form>
+
+  </div>
+</body>
+</html>
