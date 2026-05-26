@@ -1,0 +1,152 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #add8e6;
+}
+
+/* ── Scene ── */
+.scene {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  background: #add8e6;
+  overflow: hidden;
+}
+
+/* Ground */
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: #3a8c3a;
+}
+
+/* ── House ── */
+#house {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background: #e8927a;
+  border: 3px solid #b8601a;
+  left: 200px;
+  top: 130px;
+}
+
+/* ── Chimney ── */
+#chimney {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background: repeating-linear-gradient(
+    180deg,
+    #ccc 0px, #ccc 12px,
+    #fff 12px, #fff 16px
+  );
+  border: 3px solid #555;
+  top: -120px;
+  right: 100px;
+  z-index: -1;
+}
+
+/* ── Roof ── */
+#roof {
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  background-color: #e8927a;
+  border: 3px solid #b8601a;
+  top: 0;
+  left: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      #b8601a 18px,
+      #b8601a 21px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      #b8601a 18px,
+      #b8601a 21px
+    );
+}
+
+/* ── Windows ── */
+#window-1,
+#window-2 {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: #ffffa0;
+  border: 4px solid #b8601a;
+  top: 160px;
+}
+
+/* Vertical divider */
+#window-1::after,
+#window-2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #b8601a;
+  transform: translateX(-50%);
+}
+
+#window-1 { left: 40px; }
+#window-2 { right: 40px; }
+
+/* ── Door ── */
+#door {
+  position: absolute;
+  width: 100px;
+  height: 160px;
+  background: #d0d0d0;
+  border: 4px solid #b8601a;
+  bottom: 0;
+  left: 200px;
+}
+
+/* Door knob */
+#door::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #b8601a;
+  border-radius: 50%;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── Welcome sign ── */
+.welcome {
+  position: absolute;
+  bottom: 118px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7ec8a0;
+  border: 3px solid #3a8c3a;
+  padding: 10px 36px;
+  font-family: Impact, sans-serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #222;
+  letter-spacing: 2px;
+}
