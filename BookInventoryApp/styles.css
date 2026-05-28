@@ -1,0 +1,165 @@
+:root {
+  --bg: #fdf6ee;
+  --heading: #2c1a0e;
+  --text: #3d2b1f;
+  --border: #c9a87c;
+  --header-bg: #2c1a0e;
+  --header-text: #f5e6cc;
+  --shadow: rgba(44, 26, 14, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'Lora', Georgia, serif;
+  color: var(--text);
+  min-height: 100vh;
+  padding: 48px 24px;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--heading);
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px var(--shadow);
+  border: 2px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+thead tr {
+  background: var(--header-bg);
+}
+
+thead th {
+  color: var(--header-text);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 20px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+thead th:last-child { border-right: none; }
+
+tbody td {
+  padding: 14px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(180,140,100,0.25);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+/* ── Row background gradients via attribute selectors (story 8) ── */
+tr[class="read"] {
+  background-image: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(135deg, #fde8e8 0%, #f5c6c6 100%);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(135deg, #fff3cd 0%, #ffe8a0 100%);
+}
+
+/* ── display: inline-block on all span elements (story 9) ── */
+span {
+  display: inline-block;
+}
+
+/* ── Status + rate span sizing (story 13) ── */
+/* attribute selector targeting class="status" and class starting with "rate" */
+span[class="status"],
+span[class^="rate"] {
+  height: 32px;
+  width: auto;
+  padding: 0 16px;
+  line-height: 32px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+/* ── Status pill for .read rows (story 11) ── */
+tr[class="read"] span[class="status"] {
+  background-image: linear-gradient(135deg, #28a745, #1e7e34);
+  border: 2px solid #155724;
+  color: #fff;
+}
+
+/* ── Status pill for .to-read rows (story 10) ── */
+tr[class="to-read"] span[class="status"] {
+  background-image: linear-gradient(135deg, #dc3545, #b02132);
+  border: 2px solid #7b1521;
+  color: #fff;
+}
+
+/* ── Status pill for .in-progress rows (story 12) ── */
+tr[class="in-progress"] span[class="status"] {
+  background-image: linear-gradient(135deg, #fd9800, #e07b00);
+  border: 2px solid #a85a00;
+  color: #fff;
+}
+
+/* ── Rate container sizing (story 13 continued) ── */
+span[class^="rate"] {
+  width: auto;
+  padding: 0 4px;
+  background: none;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: auto;
+}
+
+/* ── Individual rating circles — direct children of rate spans (story 14) ── */
+span[class^="rate"] > span {
+  border: 2px solid #c9a87c;
+  border-radius: 50%;
+  margin: 0 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+}
+
+/* ── One star filled (story 15) ── */
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(135deg, #f5c518, #e6a800);
+}
+
+/* ── Two stars filled (story 16) ── */
+span[class~="two"] > span:first-child,
+span[class~="two"] > span:nth-child(2) {
+  background-image: linear-gradient(135deg, #f5c518, #e6a800);
+}
+
+/* ── Three stars filled (story 17) ── */
+span[class~="three"] > span {
+  background-image: linear-gradient(135deg, #f5c518, #e6a800);
+}
