@@ -1,0 +1,130 @@
+/* --- Global Resets & Layout Setup --- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* --- Left Sidebar Navigation --- */
+#navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  border-right: 2px solid #a8a8a8;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar header {
+  font-size: 1.8rem;
+  padding: 20px;
+  font-weight: normal;
+  color: #000000;
+  border-bottom: 1px solid #a8a8a8;
+  text-align: left;
+}
+
+.nav-links-container {
+  overflow-y: auto; /* Adds the scrolling feature to the sidebar links */
+  flex-grow: 1;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 20px;
+  color: #4d4d4d;
+  text-decoration: none;
+  border-bottom: 1px solid #d3d3d3;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* --- Main Technical Document Space --- */
+#main-doc {
+  margin-left: 320px; /* Pushes content right to respect the 300px sidebar */
+  padding: 40px;
+  max-width: 1100px;
+}
+
+.main-section {
+  margin-bottom: 40px;
+}
+
+.main-section header {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  color: #333333;
+}
+
+/* Bullets styling to look clean and spaced out */
+ul {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Inline and Block Code block styles */
+code {
+  display: block;
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 15px;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 15px 0;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+p code {
+  display: inline;
+  background-color: #f2f2f2;
+  padding: 2px 6px;
+  margin: 0;
+}
+
+/* --- Media Query for Mobile/Small Screen Responsiveness --- */
+@media (max-width: 768px) {
+  #navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #a8a8a8;
+  }
+
+  #navbar header {
+    text-align: center;
+  }
+
+  #main-doc {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
