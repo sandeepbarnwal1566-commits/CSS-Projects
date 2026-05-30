@@ -1,0 +1,303 @@
+/* General Base Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9f9fb;
+  color: #1d1d1f;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth scrolling when nav links are clicked */
+  padding-top: 80px; /* Prevents hero section content from getting hidden under fixed navbar */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   13 & 15. FIXED NAVBAR UTILIZING FLEXBOX
+   ========================================================================== */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e5ea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#header-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+#nav-bar {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #515154;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #0071e3;
+}
+
+/* ==========================================================================
+   Hero & Form Styling
+   ========================================================================== */
+#hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9f9fb 100%);
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+#hero p {
+  color: #86868b;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  font-size: 1.1rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#email {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 16px;
+  border: 1px solid #d2d2d7;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#email:focus {
+  border-color: #0071e3;
+}
+
+#submit {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0071e3;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#submit:hover {
+  background-color: #0077ed;
+}
+
+/* ==========================================================================
+   Features Section
+   ========================================================================== */
+#features {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.feature-item .icon {
+  font-size: 2rem;
+  background-color: #e8e8ed;
+  padding: 12px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.feature-item p {
+  color: #86868b;
+}
+
+/* ==========================================================================
+   Video Layout
+   ========================================================================== */
+#how-it-works {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#how-it-works h2 {
+  margin-bottom: 24px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Pricing Section
+   ========================================================================== */
+#pricing {
+  padding: 60px 0 100px 0;
+  text-align: center;
+}
+
+#pricing h2 {
+  margin-bottom: 32px;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5ea;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card.active {
+  border-color: #0071e3;
+  box-shadow: 0 4px 20px rgba(0, 113, 227, 0.08);
+}
+
+.level {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #86868b;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.card ul {
+  list-style: none;
+  margin-bottom: 24px;
+  color: #515154;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #0071e3;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #0071e3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card.active .btn, .btn:hover {
+  background-color: #0071e3;
+  color: #fff;
+}
+
+/* ==========================================================================
+   14. MEDIA QUERY FOR RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 650px) {
+  #header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  body {
+    padding-top: 110px; /* Adjust layout offset for dynamic header stack */
+  }
+
+  #nav-bar {
+    gap: 16px;
+  }
+  
+  .pricing-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
