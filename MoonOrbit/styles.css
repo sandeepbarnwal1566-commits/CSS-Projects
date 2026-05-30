@@ -1,0 +1,80 @@
+/* Base settings and viewport alignment */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh; /* Set height to 100% of the viewport */
+  display: flex; /* Flexbox layout to center the content */
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0f19; /* Deep cosmic background */
+  overflow: hidden;
+}
+
+/* Space container */
+.space {
+  width: 200px;
+  height: 200px;
+  position: relative; /* Relative positioning for absolute children */
+}
+
+/* Earth setup */
+.earth {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /* Position center at halfway point of parent */
+  top: 50%;
+  left: 50%;
+  /* Shift element back by half its own width and height */
+  transform: translate(-50%, -50%);
+  background-color: #4a90e2; /* Vibrant blue Earth */
+  border-radius: 50%; /* Circle shape */
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.5); /* Custom glow effect */
+}
+
+/* Orbit track setup */
+.orbit {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  /* Align bottom-right corner at center using negative transform shift */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%; /* Forces the path to be a circle */
+  
+  /* Apply the animation: 5s duration, linear timing, infinite loop */
+  animation: orbit 5s linear infinite;
+  
+  /* Optional visual reference: uncomment the line below to see the track line */
+  /* border: 1px dashed rgba(255, 255, 255, 0.1); */
+}
+
+/* Moon setup */
+.moon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  /* Positioned at the top of the orbit and centered horizontally */
+  top: 0;
+  left: 50%;
+  /* Move element to the left by half of its width */
+  transform: translateX(-50%);
+  background-color: #f5f6fa; /* Pearl white Moon */
+  border-radius: 50%; /* Circle shape */
+  box-shadow: 0 0 10px rgba(245, 246, 250, 0.6); /* Custom moonlit glow */
+}
+
+/* Animation keyframes rotating the entire orbit track 360 degrees */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
