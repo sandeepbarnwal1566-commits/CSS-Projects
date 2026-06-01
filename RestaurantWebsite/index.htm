@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rustic Fork | Artisanal Dining</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. Skip to Main Content Link for Keyboard Users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation with Semantic ARIA label -->
+    <header class="navbar">
+        <div class="logo">The Rustic Fork</div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#booking">Book a Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main landmark handles the skip target -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Flavors That Tell a Story</h1>
+                <p>Experience locally sourced, artisanal dining crafted with passion and served with love.</p>
+                <!-- Using a contextual anchor link to scroll down smoothly -->
+                <a href="#menu" class="btn">View Our Menu</a>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">On The Menu</h2>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3>Truffe Mushroom Risotto</h3>
+                        <p>Arborio rice simmered with wild forest mushrooms and shaved black truffle.</p>
+                    </div>
+                    <span class="price">$24</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3>Smoked Rosemary Salmon</h3>
+                        <p>Pan-seared Atlantic salmon infused with wood smoke, served with asparagus.</p>
+                    </div>
+                    <span class="price">$28</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3>Heirloom Burrata Salad</h3>
+                        <p>Local burrata, ripe heirloom tomatoes, aged balsamic glaze, and fresh basil.</p>
+                    </div>
+                    <span class="price">$16</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-details">
+                        <h3>Velvet Chocolate Lava</h3>
+                        <p>Rich dark chocolate cake with a molten center, served with vanilla bean gelato.</p>
+                    </div>
+                    <span class="price">$12</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Founded with a simple vision, <strong>The Rustic Fork</strong> brings the warmth of traditional, scratch-made cooking to your modern table. We partner tightly with regional farmers to ensure every ingredient is fresh and sustainable.</p>
+            </div>
+        </section>
+
+        <!-- 4. Missing Table Booking Form Section -->
+        <section id="booking" class="booking-section">
+            <div class="form-card">
+                <h2>Reserve a Table</h2>
+                <p>Spaces fill up quickly. Secure your dining experience today.</p>
+                
+                <form action="#" method="POST" class="reservation-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" name="date" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. Form submission button using native interactive semantic tag -->
+                    <button type="submit" class="btn btn-submit">Confirm Reservation</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. Accessible Footer with semantic contentinfo role -->
+    <footer role="contentinfo" id="contact" class="contact-footer">
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h3>Visit Us</h3>
+                <p>123 Culinary Avenue</p>
+                <p>Gourmet District, NY 10001</p>
+            </div>
+            <div class="footer-box">
+                <h3>Hours</h3>
+                <p>Tue - Thu: 4:00 PM - 10:00 PM</p>
+                <p>Fri - Sun: 12:00 PM - 11:00 PM</p>
+            </div>
+            <div class="footer-box">
+                <h3>Say Hello</h3>
+                <p>Phone: +1 (555) 839-2001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Rustic Fork. Built with semantic accessibility.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
