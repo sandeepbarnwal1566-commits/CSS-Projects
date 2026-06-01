@@ -46,18 +46,28 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 10%;
-    background-color: var(--text-light);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    position: sticky;
+    /* 1. Make it float over the hero section*/
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    
+    /* 2. Make the background transparent */
+    /* REPLACE YOUR TRANSPARENT BACKGROUND WITH THESE TWO LINES: */
+    background-color: transparent;
+    /* 3. Remove the old dark shadow so it looks clean */
+    box-shadow: none; 
+    
+    /* Smooth transition for when we add hover or scroll effects later */
+    transition: var(--transition);
 }
 
 .navbar .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color:  rgb(13, 100, 13);
 }
 
 .navbar ul {
@@ -68,9 +78,10 @@ body {
 
 .navbar a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: rgb(13, 100, 13);
     font-weight: 600;
     font-size: 0.95rem;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3); /* Adds subtle depth to text for better visibility on hero background */  
     transition: var(--transition);
 }
 
@@ -273,6 +284,7 @@ body {
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
+        
     }
 
     .navbar ul {
