@@ -1,0 +1,154 @@
+/* 1. Global Reset & Body Centering */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2. Main Card Frame */
+.profile-card {
+  width: 350px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Keeps top blue banner background from spilling past rounded corners */
+  text-align: center;
+}
+
+/* 3. Blue Top Banner */
+.card-header {
+  background-color: #3b71f3;
+  height: 100px;
+  position: relative;
+  margin-bottom: 55px; /* Creates space below for the overlapping picture */
+}
+
+/* 4. Profile Image Ring & Placement */
+.profile-img-container {
+  position: absolute;
+  bottom: -45px; /* Pulls half the image down into the white body section */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px; /* White spacing ring */
+  border: 3px solid #3b71f3; /* Outer blue ring */
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 5. Card Content Stacking Area */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 24px 24px;
+}
+
+.name {
+  font-size: 22px;
+  color: #1c1e21;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 14px;
+  color: #65676b;
+  margin-top: 4px;
+}
+
+/* 6. Social Media Row */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.08);
+  filter: brightness(0.95);
+}
+
+/* Platform colors */
+.facebook { background-color: #1877f2; }
+.twitter { background-color: #1da1f2; }
+.instagram { background-color: #e1306c; }
+.youtube { background-color: #ff0000; }
+
+/* 7. Action Button Row */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.btn {
+  flex: 1; /* Makes both buttons take up equal width */
+  max-width: 120px;
+  padding: 9px 0;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #3b71f3;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #2a57c6;
+}
+
+/* 8. Bottom Stats Row */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e4e6eb;
+  color: #4b4c4f;
+  font-size: 14px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.stat-item i {
+  color: #65676b;
+}
